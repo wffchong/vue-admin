@@ -9,7 +9,7 @@ export const useGlobalStore = defineStore({
 	id: 'GlobalState',
 	// state: 返回对象的函数
 	state: (): GlobalState => ({
-		token: '123',
+		token: '',
 		userInfo: ''
 	}),
 	getters: {},

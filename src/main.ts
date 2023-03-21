@@ -1,6 +1,14 @@
 import { createApp } from 'vue'
 import icons from '@/global/registerIcons'
 import App from './App.vue'
+// reset style sheet
+import '@/styles/reset.scss'
+// CSS common style sheet
+import '@/styles/common.scss'
+// iconfont css
+import '@/assets/iconfont/iconfont.scss'
+// font css
+import '@/assets/fonts/font.scss'
 import router from '@/routers'
 // pinia store
 import pinia from '@/stores/index'

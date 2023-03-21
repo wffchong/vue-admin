@@ -1,29 +1,24 @@
 <template>
-	<div class="login-container">login</div>
+	<div class="login-container flx-center">
+		<div class="login-box">
+			<div class="login-left">
+				<img src="@/assets/images/login_left.png" alt="login" />
+			</div>
+			<div class="login-form">
+				<div class="login-logo">
+					<img class="login-icon" src="@/assets/images/logo.svg" alt="" />
+					<h2 class="logo-text">Vue-Admin</h2>
+				</div>
+				<LoginForm />
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts" name="login">
-import { useGlobalStore } from '@/stores'
-import { onMounted } from 'vue'
-import { loginApi } from '@/api/modules/login'
-import md5 from 'js-md5'
-
-const globalStore = useGlobalStore()
-const num = ref(1)
-console.log(num.value)
-const token = globalStore.token
-console.log('token', token)
-
-onMounted(() => {
-	loginApi({
-		username: 'admin',
-		password: md5('123456')
-	})
-		.then(res => {
-			console.log('res', res)
-		})
-		.catch(err => {
-			console.log(err)
-		})
-})
+import LoginForm from './components/LoginForm.vue'
 </script>
+
+<style scoped lang="scss">
+@import './index.scss';
+</style>

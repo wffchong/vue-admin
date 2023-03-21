@@ -13,9 +13,13 @@ declare module '@vue/runtime-core' {
     404: typeof import('./src/components/ErrorMessage/404.vue')['default']
     500: typeof import('./src/components/ErrorMessage/500.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
     Test: typeof import('./src/components/Test.vue')['default']
   }
 }
