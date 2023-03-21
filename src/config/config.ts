@@ -8,3 +8,6 @@ export const LOGIN_URL: string = '/login'
 
 // 默认主题颜色
 export const DEFAULT_PRIMARY: string = '#009688'
+
+// * 路由白名单地址（必须是本地存在的路由 staticRouter.ts）--> 不需要登录，直接访问
+export const ROUTER_WHITE_LIST: string[] = ['/500']
