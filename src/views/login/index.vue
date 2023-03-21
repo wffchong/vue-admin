@@ -1,6 +1,7 @@
 <template>
 	<div class="login-container flx-center">
 		<div class="login-box">
+			<SwitchDark class="dark" />
 			<div class="login-left">
 				<img src="@/assets/images/login_left.png" alt="login" />
 			</div>
@@ -16,6 +17,7 @@
 </template>
 
 <script setup lang="ts" name="login">
+import SwitchDark from '@/components/SwitchDark/index.vue'
 import LoginForm from './components/LoginForm.vue'
 </script>
 

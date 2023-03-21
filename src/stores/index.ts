@@ -1,7 +1,8 @@
 import { defineStore, createPinia } from 'pinia'
-import { GlobalState } from './interface'
+import { GlobalState, ThemeConfigProps } from './interface'
 import piniaPersistConfig from '@/config/piniaPersist'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import { DEFAULT_PRIMARY } from '@/config/config'
 
 // defineStore 调用后返回一个函数，调用该函数获得 Store 实体
 export const useGlobalStore = defineStore({
@@ -10,7 +11,13 @@ export const useGlobalStore = defineStore({
 	// state: 返回对象的函数
 	state: (): GlobalState => ({
 		token: '',
-		userInfo: ''
+		userInfo: '',
+		themeConfig: {
+			// 默认 primary 主题颜色
+			primary: DEFAULT_PRIMARY,
+			// 深色模式
+			isDark: false
+		}
 	}),
 	getters: {},
 	actions: {
@@ -21,6 +28,10 @@ export const useGlobalStore = defineStore({
 		// setUserInfo
 		setUserInfo(userInfo: any) {
 			this.userInfo = userInfo
+		},
+		// setThemeConfig
+		setThemeConfig(themeConfig: ThemeConfigProps) {
+			this.themeConfig = themeConfig
 		}
 	},
 	persist: piniaPersistConfig('GlobalState')
