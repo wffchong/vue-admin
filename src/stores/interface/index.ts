@@ -10,3 +10,12 @@ export interface ThemeConfigProps {
 	primary: string
 	isDark: boolean
 }
+
+/* AuthState */
+export interface AuthState {
+	routeName: string
+	authButtonList: {
+		[key: string]: string[]
+	}
+	authMenuList: Menu.MenuOptions[]
+}

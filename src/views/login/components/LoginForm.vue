@@ -30,6 +30,7 @@ import { loginApi } from '@/api/modules/login'
 import { useGlobalStore } from '@/stores'
 import { getTimeState } from '@/utils/util'
 import { HOME_URL } from '@/config/config'
+import { initDynamicRouter } from '@/routers/modules/dynamicRouter'
 import { CircleClose, UserFilled } from '@element-plus/icons-vue'
 import type { ElForm } from 'element-plus'
 import md5 from 'js-md5'
@@ -57,7 +58,10 @@ const login = (formEl: FormInstance | undefined) => {
 			const { data } = await loginApi({ ...loginForm, password: md5(loginForm.password) })
 			globalStore.setToken(data.access_token)
 
-			// 2.跳转到首页
+			// 2.添加动态路由
+			await initDynamicRouter()
+
+			// 3.跳转到首页
 			router.push(HOME_URL)
 			ElNotification({
 				title: getTimeState(),
