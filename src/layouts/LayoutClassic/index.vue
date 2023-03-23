@@ -1,7 +1,15 @@
 <!-- 经典布局 -->
 <template>
 	<el-container class="layout">
-		<el-header>Header</el-header>
+		<el-header>
+			<div class="header-lf">
+				<div class="logo flx-center">
+					<img src="@/assets/images/logo.svg" alt="logo" />
+					<span>Vue Admin</span>
+				</div>
+				<ToolBarLeft />
+			</div>
+		</el-header>
 		<el-container>
 			<el-aside width="200px">Aside</el-aside>
 			<el-container>
@@ -14,6 +22,7 @@
 
 <script setup lang="ts" name="layoutClassic">
 import Main from '../components/Main/index.vue'
+import ToolBarLeft from '../components/Header/ToolBarLeft.vue'
 </script>
 
 <style scoped lang="scss">

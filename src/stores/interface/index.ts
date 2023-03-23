@@ -9,6 +9,7 @@ export interface GlobalState {
 export interface ThemeConfigProps {
 	primary: string
 	isDark: boolean
+	isCollapse: boolean
 }
 
 /* AuthState */

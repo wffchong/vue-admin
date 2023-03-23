@@ -16,7 +16,9 @@ export const useGlobalStore = defineStore({
 			// 默认 primary 主题颜色
 			primary: DEFAULT_PRIMARY,
 			// 深色模式
-			isDark: false
+			isDark: false,
+			// 折叠菜单
+			isCollapse: false
 		}
 	}),
 	getters: {},
