@@ -10,6 +10,8 @@ export interface ThemeConfigProps {
 	primary: string
 	isDark: boolean
 	isCollapse: boolean
+	breadcrumb: boolean
+	breadcrumbIcon: boolean
 }
 
 /* AuthState */

@@ -18,7 +18,11 @@ export const useGlobalStore = defineStore({
 			// 深色模式
 			isDark: false,
 			// 折叠菜单
-			isCollapse: false
+			isCollapse: false,
+			// 面包屑导航
+			breadcrumb: false,
+			// 面包屑导航图标
+			breadcrumbIcon: true
 		}
 	}),
 	getters: {},

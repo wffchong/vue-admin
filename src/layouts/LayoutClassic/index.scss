@@ -34,6 +34,16 @@
 		}
 		:deep(.tool-bar-lf) {
 			color: #ffffff;
+			.el-breadcrumb__inner.is-link {
+				color: #e5eaf3;
+				&:hover {
+					color: var(--el-color-primary);
+				}
+			}
+			.el-breadcrumb__item:last-child .el-breadcrumb__inner,
+			.el-breadcrumb__item:last-child .el-breadcrumb__inner:hover {
+				color: #cfd3dc;
+			}
 		}
 	}
 	.el-aside {
