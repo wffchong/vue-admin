@@ -45,6 +45,12 @@
 				color: #cfd3dc;
 			}
 		}
+		:deep(.tool-bar-ri) {
+			.toolBar-icon,
+			.username {
+				color: #e5eaf3;
+			}
+		}
 	}
 	.el-aside {
 		width: auto;

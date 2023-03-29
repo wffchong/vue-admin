@@ -9,6 +9,7 @@
 				</div>
 				<ToolBarLeft />
 			</div>
+			<ToolBarRight />
 		</el-header>
 		<el-container class="classic-content">
 			<el-aside>
@@ -40,6 +41,7 @@
 import Main from '../components/Main/index.vue'
 import ToolBarLeft from '../components/Header/ToolBarLeft.vue'
 import SubMenu from '../components/Menu/SubMenu.vue'
+import ToolBarRight from '../components/Header/ToolBarRight.vue'
 import { useGlobalStore } from '@/stores'
 import { useAuthStore } from '@/stores/modules/auth'
 

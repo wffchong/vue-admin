@@ -28,3 +28,8 @@ export const getAuthMenuListApi = () => {
 	// 如果想让菜单变为本地数据，注释上一行代码，并引入本地 dynamicRouter.json 数据
 	// return DynamicRouter
 }
+
+// * 用户退出登录
+export const logoutApi = () => {
+	return http.post(`/logout`)
+}
