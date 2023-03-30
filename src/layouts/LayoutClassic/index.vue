@@ -29,9 +29,8 @@
 					</el-scrollbar>
 				</div>
 			</el-aside>
-			<el-container>
+			<el-container class="classic-main">
 				<Main />
-				<el-footer>Footer</el-footer>
 			</el-container>
 		</el-container>
 	</el-container>

@@ -22,7 +22,15 @@ export const useGlobalStore = defineStore({
 			// 面包屑导航
 			breadcrumb: false,
 			// 面包屑导航图标
-			breadcrumbIcon: true
+			breadcrumbIcon: true,
+			// 页脚
+			footer: true,
+			// 标签页
+			tabs: true,
+			// 标签页图标
+			tabsIcon: true,
+			// 当前页面是否全屏
+			maximize: false
 		}
 	}),
 	getters: {},

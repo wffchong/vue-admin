@@ -12,6 +12,10 @@ export interface ThemeConfigProps {
 	isCollapse: boolean
 	breadcrumb: boolean
 	breadcrumbIcon: boolean
+	footer: Boolean
+	tabs: boolean
+	tabsIcon: true
+	maximize: boolean
 }
 
 /* AuthState */
@@ -21,4 +25,23 @@ export interface AuthState {
 		[key: string]: string[]
 	}
 	authMenuList: Menu.MenuOptions[]
+}
+
+/* tabsMenuProps */
+export interface TabsMenuProps {
+	icon: string
+	title: string
+	path: string
+	name: string
+	close: boolean
+}
+
+/* TabsState */
+export interface TabsState {
+	tabsMenuList: TabsMenuProps[]
+}
+
+/* keepAliveState */
+export interface keepAliveState {
+	keepAliveName: string[]
 }
