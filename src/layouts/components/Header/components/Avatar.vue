@@ -6,13 +6,13 @@
 		<template #dropdown>
 			<el-dropdown-menu>
 				<el-dropdown-item @click="openDialog('infoRef')">
-					<el-icon><User /></el-icon>个人信息
+					<el-icon><User /></el-icon>{{ $t('header.personalData') }}
 				</el-dropdown-item>
 				<el-dropdown-item @click="openDialog('passwordRef')">
-					<el-icon><Edit /></el-icon>修改密码
+					<el-icon><Edit /></el-icon>{{ $t('header.changePassword') }}
 				</el-dropdown-item>
 				<el-dropdown-item @click="logout" divided>
-					<el-icon><SwitchButton /></el-icon>退出登录
+					<el-icon><SwitchButton /></el-icon>{{ $t('header.logout') }}
 				</el-dropdown-item>
 			</el-dropdown-menu>
 		</template>

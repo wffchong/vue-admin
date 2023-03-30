@@ -18,10 +18,12 @@ import '@/styles/element.scss'
 import router from '@/routers'
 // pinia store
 import pinia from '@/stores/index'
+// vue i18n
+import I18n from '@/languages/index'
 
 const app = createApp(App)
 app.use(icons)
-
+app.use(I18n)
 app.use(router)
 app.use(pinia)
 
