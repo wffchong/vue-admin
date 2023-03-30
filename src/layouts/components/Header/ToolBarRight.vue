@@ -4,6 +4,7 @@
 			<AssemblySize id="assemblySize" />
 			<Language id="language" />
 			<SearchMenu id="searchMenu" />
+			<Message id="message" />
 			<Fullscreen id="fullscreen" />
 		</div>
 		<span class="username">wff</span>
@@ -16,6 +17,7 @@ import Avatar from './components/Avatar.vue'
 import AssemblySize from './components/AssemblySize.vue'
 import Language from './components/Language.vue'
 import SearchMenu from './components/SearchMenu.vue'
+import Message from './components/Message.vue'
 import Fullscreen from './components/Fullscreen.vue'
 </script>
 
