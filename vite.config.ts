@@ -25,7 +25,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		base: './',
 		resolve: {
 			alias: {
-				'@': resolve(__dirname, './src')
+				'@': resolve(__dirname, './src'),
+				// 去掉控制台警告
+				'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
 			}
 		},
 		server: {
