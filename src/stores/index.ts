@@ -12,7 +12,10 @@ export const useGlobalStore = defineStore({
 	state: (): GlobalState => ({
 		token: '',
 		userInfo: '',
+		// 组件大小
 		assemblySize: 'default',
+		// 系统语言
+		language: '',
 		themeConfig: {
 			// 默认 primary 主题颜色
 			primary: DEFAULT_PRIMARY,
@@ -51,6 +54,10 @@ export const useGlobalStore = defineStore({
 		// setAssemblySizeSize
 		setAssemblySizeSize(assemblySize: AssemblySizeType) {
 			this.assemblySize = assemblySize
+		},
+		// updateLanguage
+		updateLanguage(language: string) {
+			this.language = language
 		}
 	},
 	persist: piniaPersistConfig('GlobalState')

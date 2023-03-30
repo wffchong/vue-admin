@@ -4,6 +4,7 @@ export interface GlobalState {
 	userInfo: any
 	themeConfig: ThemeConfigProps
 	assemblySize: AssemblySizeType
+	language: string
 }
 
 /* themeConfigProp */

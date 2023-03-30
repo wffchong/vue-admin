@@ -2,6 +2,7 @@
 	<div class="tool-bar-ri">
 		<div class="header-icon">
 			<AssemblySize id="assemblySize" />
+			<Language id="language" />
 		</div>
 		<span class="username">wff</span>
 		<Avatar />
@@ -11,6 +12,7 @@
 <script setup lang="ts">
 import Avatar from './components/Avatar.vue'
 import AssemblySize from './components/AssemblySize.vue'
+import Language from './components/Language.vue'
 </script>
 
 <style scoped lang="scss">
