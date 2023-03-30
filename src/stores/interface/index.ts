@@ -11,6 +11,8 @@ export interface GlobalState {
 export interface ThemeConfigProps {
 	primary: string
 	isDark: boolean
+	isGrey: boolean
+	isWeak: boolean
 	isCollapse: boolean
 	breadcrumb: boolean
 	breadcrumbIcon: boolean

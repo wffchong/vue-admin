@@ -44,8 +44,26 @@ export const useTheme = () => {
 		}
 	}
 
+	// 灰色和弱色切换
+	const changeGreyOrWeak = (value: boolean, type: string) => {
+		const body = document.body as HTMLElement
+		if (!value) return body.setAttribute('style', '')
+		if (type === 'grey') body.setAttribute('style', 'filter: grayscale(1)')
+		if (type === 'weak') body.setAttribute('style', 'filter: invert(80%)')
+		let propName = type == 'grey' ? 'isWeak' : 'isGrey'
+		globalStore.setThemeConfig({ ...themeConfig.value, [propName]: false })
+	}
+
+	// 初始化 theme 配置
+	const initTheme = () => {
+		switchDark()
+		if (themeConfig.value.isGrey) changeGreyOrWeak(true, 'grey')
+		if (themeConfig.value.isWeak) changeGreyOrWeak(true, 'weak')
+	}
+
 	return {
 		switchDark,
-		changePrimary
+		changePrimary,
+		initTheme
 	}
 }
