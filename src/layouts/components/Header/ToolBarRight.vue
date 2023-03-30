@@ -3,6 +3,7 @@
 		<div class="header-icon">
 			<AssemblySize id="assemblySize" />
 			<Language id="language" />
+			<Fullscreen id="fullscreen" />
 		</div>
 		<span class="username">wff</span>
 		<Avatar />
@@ -13,6 +14,7 @@
 import Avatar from './components/Avatar.vue'
 import AssemblySize from './components/AssemblySize.vue'
 import Language from './components/Language.vue'
+import Fullscreen from './components/Fullscreen.vue'
 </script>
 
 <style scoped lang="scss">
