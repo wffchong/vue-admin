@@ -19,7 +19,7 @@ export const useTheme = () => {
 	}
 
 	// 修改主题颜色
-	const changePrimary = (val: string) => {
+	const changePrimary = (val: string | null) => {
 		if (!val) {
 			val = DEFAULT_PRIMARY
 			ElMessage({ type: 'success', message: `主题颜色已重置为 ${DEFAULT_PRIMARY}` })
@@ -46,6 +46,8 @@ export const useTheme = () => {
 
 	// 灰色和弱色切换
 	const changeGreyOrWeak = (value: boolean, type: string) => {
+		console.log('value', value)
+		console.log('type', type)
 		const body = document.body as HTMLElement
 		if (!value) return body.setAttribute('style', '')
 		if (type === 'grey') body.setAttribute('style', 'filter: grayscale(1)')
@@ -64,6 +66,7 @@ export const useTheme = () => {
 	return {
 		switchDark,
 		changePrimary,
-		initTheme
+		initTheme,
+		changeGreyOrWeak
 	}
 }

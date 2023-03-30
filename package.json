@@ -24,6 +24,7 @@
 		"element-plus": "^2.3.0",
 		"js-md5": "^0.7.3",
 		"lint-staged": "^13.2.0",
+		"mitt": "^3.0.0",
 		"nprogress": "^0.2.0",
 		"pinia": "^2.0.33",
 		"sortablejs": "^1.15.0",

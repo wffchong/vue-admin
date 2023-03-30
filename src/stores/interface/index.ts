@@ -16,10 +16,11 @@ export interface ThemeConfigProps {
 	isCollapse: boolean
 	breadcrumb: boolean
 	breadcrumbIcon: boolean
-	footer: Boolean
+	footer: boolean
 	tabs: boolean
 	tabsIcon: true
 	maximize: boolean
+	layout: LayoutType
 }
 
 /* AuthState */
@@ -51,3 +52,5 @@ export interface keepAliveState {
 }
 
 export type AssemblySizeType = 'default' | 'small' | 'large'
+
+export type LayoutType = 'vertical' | 'classic' | 'transverse' | 'columns'
