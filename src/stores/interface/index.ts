@@ -3,6 +3,7 @@ export interface GlobalState {
 	token: string
 	userInfo: any
 	themeConfig: ThemeConfigProps
+	assemblySize: AssemblySizeType
 }
 
 /* themeConfigProp */
@@ -45,3 +46,5 @@ export interface TabsState {
 export interface keepAliveState {
 	keepAliveName: string[]
 }
+
+export type AssemblySizeType = 'default' | 'small' | 'large'

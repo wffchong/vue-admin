@@ -1,5 +1,5 @@
 import { defineStore, createPinia } from 'pinia'
-import { GlobalState, ThemeConfigProps } from './interface'
+import { AssemblySizeType, GlobalState, ThemeConfigProps } from './interface'
 import piniaPersistConfig from '@/config/piniaPersist'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import { DEFAULT_PRIMARY } from '@/config/config'
@@ -12,6 +12,7 @@ export const useGlobalStore = defineStore({
 	state: (): GlobalState => ({
 		token: '',
 		userInfo: '',
+		assemblySize: 'default',
 		themeConfig: {
 			// 默认 primary 主题颜色
 			primary: DEFAULT_PRIMARY,
@@ -46,6 +47,10 @@ export const useGlobalStore = defineStore({
 		// setThemeConfig
 		setThemeConfig(themeConfig: ThemeConfigProps) {
 			this.themeConfig = themeConfig
+		},
+		// setAssemblySizeSize
+		setAssemblySizeSize(assemblySize: AssemblySizeType) {
+			this.assemblySize = assemblySize
 		}
 	},
 	persist: piniaPersistConfig('GlobalState')
