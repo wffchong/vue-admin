@@ -3,6 +3,7 @@
 		<div class="header-icon">
 			<AssemblySize id="assemblySize" />
 			<Language id="language" />
+			<SearchMenu id="searchMenu" />
 			<Fullscreen id="fullscreen" />
 		</div>
 		<span class="username">wff</span>
@@ -14,6 +15,7 @@
 import Avatar from './components/Avatar.vue'
 import AssemblySize from './components/AssemblySize.vue'
 import Language from './components/Language.vue'
+import SearchMenu from './components/SearchMenu.vue'
 import Fullscreen from './components/Fullscreen.vue'
 </script>
 
