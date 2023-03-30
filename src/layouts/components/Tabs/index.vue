@@ -11,11 +11,13 @@
 					</template>
 				</el-tab-pane>
 			</el-tabs>
+			<MoreButton />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+import MoreButton from './components/MoreButton.vue'
 import Sortable from 'sortablejs'
 import { useGlobalStore } from '@/stores'
 import { useTabsStore } from '@/stores/modules/tabs'

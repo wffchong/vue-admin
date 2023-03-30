@@ -1,4 +1,5 @@
 <template>
+	<Maximize v-if="themeConfig.maximize" />
 	<Tabs v-if="themeConfig.tabs" />
 	<el-main>
 		<router-view v-slot="{ Component, route }">
@@ -15,18 +16,47 @@
 </template>
 
 <script setup lang="ts">
+import Maximize from './components/Maximize.vue'
 import Tabs from '../Tabs/index.vue'
 import Footer from '../Footer/index.vue'
+import { useDebounceFn } from '@vueuse/core'
 import { useGlobalStore } from '@/stores'
 import { useKeepAliveStore } from '@/stores/modules/keepAlive'
 
 const globalStore = useGlobalStore()
 const keepAliveStore = useKeepAliveStore()
-console.log('keepAliveStore', keepAliveStore.keepAliveName)
 const themeConfig = computed(() => globalStore.themeConfig)
+const isCollapse = computed(() => globalStore.themeConfig.isCollapse)
 
 // 刷新当前页面
 const isRouterShow = ref(true)
+const refreshCurrentPage = (val: boolean) => (isRouterShow.value = val)
+// 把这个函数交给tabs的刷新去处理
+provide('refresh', refreshCurrentPage)
+
+// 监听当前页是否最大化，动态添加 class
+watch(
+	() => themeConfig.value.maximize,
+	() => {
+		const app = document.getElementById('app') as HTMLElement
+		if (themeConfig.value.maximize) app.classList.add('main-maximize')
+		else app.classList.remove('main-maximize')
+	},
+	{ immediate: true }
+)
+
+// 监听窗口大小变化，折叠侧边栏
+const screenWidth = ref(0)
+// 超过100ms才会重复执行
+const listeningWindow = useDebounceFn(() => {
+	screenWidth.value = document.body.clientWidth
+	if (!isCollapse.value && screenWidth.value < 1200) globalStore.setThemeConfig({ ...themeConfig.value, isCollapse: true })
+	if (isCollapse.value && screenWidth.value > 1200) globalStore.setThemeConfig({ ...themeConfig.value, isCollapse: false })
+}, 100)
+window.addEventListener('resize', listeningWindow, false)
+onBeforeUnmount(() => {
+	window.removeEventListener('resize', listeningWindow)
+})
 </script>
 
 <style scoped></style>
