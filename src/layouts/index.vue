@@ -6,12 +6,14 @@
 <script setup lang="ts" name="layout">
 import LayoutClassic from './LayoutClassic/index.vue'
 import LayoutVertical from './LayoutVertical/index.vue'
+import LayoutTransverse from './LayoutTransverse/index.vue'
 import ThemeDrawer from './components/ThemeDrawer/index.vue'
 import { useGlobalStore } from '@/stores'
 
 const LayoutComponents: Record<string, Component> = {
 	vertical: LayoutVertical,
-	classic: LayoutClassic
+	classic: LayoutClassic,
+	transverse: LayoutTransverse
 }
 
 const globalStore = useGlobalStore()
