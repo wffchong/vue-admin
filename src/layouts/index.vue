@@ -20,7 +20,6 @@ const LayoutComponents: Record<string, Component> = {
 
 const globalStore = useGlobalStore()
 const themeConfig = computed(() => globalStore.themeConfig)
-console.log('themeConfig.layout', themeConfig.value.layout)
 </script>
 
 <style scoped lang="scss">

@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
 		403: typeof import('./src/components/ErrorMessage/403.vue')['default']
 		404: typeof import('./src/components/ErrorMessage/404.vue')['default']
 		500: typeof import('./src/components/ErrorMessage/500.vue')['default']
+		ElAlert: typeof import('element-plus/es')['ElAlert']
 		ElAside: typeof import('element-plus/es')['ElAside']
 		ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
 		ElBadge: typeof import('element-plus/es')['ElBadge']
@@ -54,6 +55,5 @@ declare module '@vue/runtime-core' {
 		RouterLink: typeof import('vue-router')['RouterLink']
 		RouterView: typeof import('vue-router')['RouterView']
 		SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
-		Test: typeof import('./src/components/Test.vue')['default']
 	}
 }
