@@ -44,8 +44,7 @@
 	</div>
 </template>
 
-<script setup lang="ts" name="dynamicForm">
-import { reactive, ref } from 'vue'
+<script setup lang="ts" name="validateForm">
 import { checkPhoneNumber } from '@/utils/eleValidate'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
