@@ -20,8 +20,13 @@ import router from '@/routers'
 import pinia from '@/stores/index'
 // vue i18n
 import I18n from '@/languages/index'
+// errorHandler
+import errorHandler from '@/utils/errorHandler'
 
 const app = createApp(App)
+// 全局代码错误捕捉
+app.config.errorHandler = errorHandler
+
 app.use(icons)
 app.use(I18n)
 app.use(router)
