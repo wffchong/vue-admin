@@ -57,6 +57,7 @@ declare module '@vue/runtime-core' {
 		ElTooltip: typeof import('element-plus/es')['ElTooltip']
 		RouterLink: typeof import('vue-router')['RouterLink']
 		RouterView: typeof import('vue-router')['RouterView']
+		SelectFilter: typeof import('./src/components/SelectFilter/index.vue')['default']
 		SelectIcon: typeof import('./src/components/SelectIcon/index.vue')['default']
 		SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
 	}
