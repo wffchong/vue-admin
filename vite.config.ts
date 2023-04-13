@@ -16,6 +16,7 @@ import { wrapperEnv } from './src/utils/getEnv'
 
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd())
@@ -94,7 +95,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 					threshold: 10240,
 					algorithm: 'gzip',
 					ext: '.gz'
-				})
+				}),
+			// * 使用 svg 图标
+			createSvgIconsPlugin({
+				iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+				symbolId: 'icon-[dir]-[name]'
+			})
 		],
 		// * 打包去除 console.log && debugger
 		esbuild: {

@@ -60,6 +60,7 @@ declare module '@vue/runtime-core' {
 		RouterView: typeof import('vue-router')['RouterView']
 		SelectFilter: typeof import('./src/components/SelectFilter/index.vue')['default']
 		SelectIcon: typeof import('./src/components/SelectIcon/index.vue')['default']
+		SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
 		SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
 		TreeFilter: typeof import('./src/components/TreeFilter/index.vue')['default']
 	}

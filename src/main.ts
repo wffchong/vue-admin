@@ -24,6 +24,8 @@ import pinia from '@/stores/index'
 import I18n from '@/languages/index'
 // errorHandler
 import errorHandler from '@/utils/errorHandler'
+// svg icons
+import 'virtual:svg-icons-register'
 
 const app = createApp(App)
 // 全局代码错误捕捉
