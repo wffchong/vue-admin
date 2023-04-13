@@ -43,3 +43,12 @@ export namespace Login {
 		[key: string]: string[]
 	}
 }
+
+// * 用户管理模块
+export namespace User {
+	export interface ResDepartment {
+		id: string
+		name: string
+		children?: ResDepartment[]
+	}
+}

@@ -55,10 +55,12 @@ declare module '@vue/runtime-core' {
 		ElTabs: typeof import('element-plus/es')['ElTabs']
 		ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
 		ElTooltip: typeof import('element-plus/es')['ElTooltip']
+		ElTree: typeof import('element-plus/es')['ElTree']
 		RouterLink: typeof import('vue-router')['RouterLink']
 		RouterView: typeof import('vue-router')['RouterView']
 		SelectFilter: typeof import('./src/components/SelectFilter/index.vue')['default']
 		SelectIcon: typeof import('./src/components/SelectIcon/index.vue')['default']
 		SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
+		TreeFilter: typeof import('./src/components/TreeFilter/index.vue')['default']
 	}
 }

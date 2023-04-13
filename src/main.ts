@@ -9,6 +9,8 @@ import '@/styles/common.scss'
 import '@/assets/iconfont/iconfont.scss'
 // font css
 import '@/assets/fonts/font.scss'
+// element css
+import 'element-plus/dist/index.css'
 // element dark(内置暗黑模式)
 import 'element-plus/theme-chalk/dark/css-vars.css'
 // custom element dark(自定义暗黑模式)
