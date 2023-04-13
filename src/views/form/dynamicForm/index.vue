@@ -47,7 +47,7 @@
 
 <script setup lang="ts" name="dynamicForm">
 import { reactive, ref } from 'vue'
-import type { FormInstance } from 'element-plus'
+import { ElMessage, type FormInstance } from 'element-plus'
 
 const formRef = ref<FormInstance>()
 const dynamicValidateForm = reactive<{
