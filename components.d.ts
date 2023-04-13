@@ -25,12 +25,15 @@ declare module '@vue/runtime-core' {
 		ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
 		ElContainer: typeof import('element-plus/es')['ElContainer']
 		ElDatePicker: typeof import('element-plus/es')['ElDatePicker']
+		ElDescriptions: typeof import('element-plus/es')['ElDescriptions']
+		ElDescriptionsItem: typeof import('element-plus/es')['ElDescriptionsItem']
 		ElDialog: typeof import('element-plus/es')['ElDialog']
 		ElDivider: typeof import('element-plus/es')['ElDivider']
 		ElDrawer: typeof import('element-plus/es')['ElDrawer']
 		ElDropdown: typeof import('element-plus/es')['ElDropdown']
 		ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
 		ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
+		ElEmpty: typeof import('element-plus/es')['ElEmpty']
 		ElFooter: typeof import('element-plus/es')['ElFooter']
 		ElForm: typeof import('element-plus/es')['ElForm']
 		ElFormItem: typeof import('element-plus/es')['ElFormItem']
@@ -54,6 +57,7 @@ declare module '@vue/runtime-core' {
 		ElTooltip: typeof import('element-plus/es')['ElTooltip']
 		RouterLink: typeof import('vue-router')['RouterLink']
 		RouterView: typeof import('vue-router')['RouterView']
+		SelectIcon: typeof import('./src/components/SelectIcon/index.vue')['default']
 		SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
 	}
 }
