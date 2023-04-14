@@ -1,5 +1,31 @@
 <template>
 	<div class="upload content-box">
+		<!-- 多图上传 -->
+		<div class="card img-box">
+			<span class="text">多图片上传组件 🍓🍇🍈🍉</span>
+			<div class="upload-list">
+				<UploadImgs v-model:fileList="fileList" :drag="false" borderRadius="50%">
+					<template #empty>
+						<el-icon><Picture /></el-icon>
+						<span>请上传照片</span>
+					</template>
+					<template #tip> 圆形组件，图片最大为 5M（禁止拖拽上传）</template>
+				</UploadImgs>
+				<UploadImgs v-model:fileList="fileList1" width="250px">
+					<template #empty>
+						<el-icon><Picture /></el-icon>
+						<span>请上传照片</span>
+					</template>
+					<template #tip> 长方形组件（可拖拽上传）</template>
+				</UploadImgs>
+			</div>
+			<el-descriptions title="配置项 📚（其它参数和单图上传组件相同）" :column="1" border>
+				<el-descriptions-item label="fileList">
+					双向绑定的 fileList 值，使用示例： v-model:fileList="fileList"
+				</el-descriptions-item>
+				<el-descriptions-item label="limit"> 最大图片上传数，默认为 5 张 </el-descriptions-item>
+			</el-descriptions>
+		</div>
 		<!-- 单图上传 -->
 		<div class="card img-box">
 			<span class="text">单图片上传组件 🍓🍇🍈🍉</span>
@@ -51,6 +77,10 @@
 
 <script setup lang="ts" name="uploadFile">
 import UploadImg from '@/components/Upload/Img.vue'
+import UploadImgs from '@/components/Upload/Imgs.vue'
+
+const fileList = ref([{ name: 'img', url: 'https://i.imgtg.com/2023/01/16/QRBHS.jpg' }])
+const fileList1 = ref([])
 
 const avatar1 = ref('')
 const avatar2 = ref('')
