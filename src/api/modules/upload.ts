@@ -8,3 +8,8 @@ import http from '@/api'
 export const uploadImg = (params: FormData) => {
 	return http.post<Upload.ResFileUrl>(`/file/upload/img`, params)
 }
+
+// * 视频上传
+export const uploadVideo = (params: FormData) => {
+	return http.post<Upload.ResFileUrl>(`/file/upload/video`, params)
+}

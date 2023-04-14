@@ -56,5 +56,6 @@ declare module '@vue/runtime-core' {
 		SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
 		SwitchDark: typeof import('./src/components/SwitchDark/index.vue')['default']
 		TreeFilter: typeof import('./src/components/TreeFilter/index.vue')['default']
+		WangEditor: typeof import('./src/components/WangEditor/index.vue')['default']
 	}
 }
