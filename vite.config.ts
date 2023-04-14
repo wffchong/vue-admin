@@ -75,7 +75,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 						esModule: true,
 						resolveStyle: (name: string) => {
 							return `element-plus/theme-chalk/${name}.css`
-						}
+						},
+						/**
+						 * 可能有些组件库不是很标准化。
+						 * 您可以打开此选项以忽略以确定文件是否存在。 导入不存在的CSS文件时防止错误。
+						 * 开启后性能可能会略有下降，但影响不大
+						 * default: false
+						 */
+						ensureStyleFile: true
 					}
 				]
 			}),
