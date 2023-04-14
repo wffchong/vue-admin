@@ -72,12 +72,100 @@
 				<el-descriptions-item label="borderRadius"> 组件边框圆角样式，默认为 "8px" </el-descriptions-item>
 			</el-descriptions>
 		</div>
+		<!-- 表单使用 -->
+		<div class="form-box">
+			<div class="card">
+				<el-alert
+					title="图片上传组件在 form 表单中使用，上传之后成功会自动重新校验"
+					type="warning"
+					effect="dark"
+					:closable="false"
+					class="mb20"
+				/>
+				<el-form ref="ruleFormRef" label-width="100px" label-suffix=" :" :rules="rules" :model="fromModel">
+					<el-form-item label="用户头像" prop="avatar">
+						<UploadImg v-model:imageUrl="fromModel.avatar" width="135px" height="135px" :file-size="3">
+							<template #empty>
+								<el-icon><Avatar /></el-icon>
+								<span>请上传头像</span>
+							</template>
+							<template #tip> 头像大小不能超过 3M </template>
+						</UploadImg>
+					</el-form-item>
+					<el-form-item label="用户照片" prop="photo">
+						<UploadImgs v-model:fileList="fromModel.photo" :limit="3" height="140px" width="140px" border-radius="50%">
+							<template #empty>
+								<el-icon><Picture /></el-icon>
+								<span>请上传照片</span>
+							</template>
+							<template #tip> 最多上传 3 张照片 </template>
+						</UploadImgs>
+					</el-form-item>
+					<el-form-item label="用户姓名" prop="username">
+						<el-input v-model="fromModel.username" placeholder="请填写用户姓名" clearable></el-input>
+					</el-form-item>
+					<el-form-item label="身份证号" prop="idCard">
+						<el-input v-model="fromModel.idCard" placeholder="请填写身份证号" clearable></el-input>
+					</el-form-item>
+					<el-form-item label="邮箱" prop="email">
+						<el-input v-model="fromModel.email" placeholder="请填写邮箱" clearable></el-input>
+					</el-form-item>
+					<el-form-item>
+						<el-button> 取消 </el-button>
+						<el-button type="primary" @click="submit"> 确定 </el-button>
+					</el-form-item>
+				</el-form>
+			</div>
+			<div class="card">
+				<el-alert
+					title="图片上传组件在 form 表单中使用，如果该表单禁用，则上传组件会自动禁用"
+					type="warning"
+					effect="dark"
+					:closable="false"
+					class="mb20"
+				/>
+				<el-form label-width="100px" label-suffix=" :" disabled :model="fromModel1">
+					<el-form-item label="用户头像" prop="avatar">
+						<UploadImg v-model:imageUrl="fromModel1.avatar" width="135px" height="135px" :file-size="3">
+							<template #empty>
+								<el-icon><Avatar /></el-icon>
+								<span>请上传头像</span>
+							</template>
+							<template #tip> 头像大小不能超过 3M </template>
+						</UploadImg>
+					</el-form-item>
+					<el-form-item label="用户照片" prop="photo">
+						<UploadImgs v-model:fileList="fromModel1.photo" height="140px" width="140px" border-radius="50%">
+							<template #empty>
+								<el-icon><Picture /></el-icon>
+								<span>请上传照片</span>
+							</template>
+							<template #tip> 照片大小不能超过 5M </template>
+						</UploadImgs>
+					</el-form-item>
+					<el-form-item label="用户姓名" prop="username">
+						<el-input v-model="fromModel1.username" placeholder="请填写用户姓名" clearable></el-input>
+					</el-form-item>
+					<el-form-item label="身份证号" prop="idCard">
+						<el-input v-model="fromModel1.idCard" placeholder="请填写身份证号" clearable></el-input>
+					</el-form-item>
+					<el-form-item label="邮箱" prop="email">
+						<el-input v-model="fromModel1.email" placeholder="请填写邮箱" clearable></el-input>
+					</el-form-item>
+					<el-form-item>
+						<el-button> 取消 </el-button>
+						<el-button type="primary" @click="submit"> 确定 </el-button>
+					</el-form-item>
+				</el-form>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script setup lang="ts" name="uploadFile">
 import UploadImg from '@/components/Upload/Img.vue'
 import UploadImgs from '@/components/Upload/Imgs.vue'
+import { FormInstance } from 'element-plus'
 
 const fileList = ref([{ name: 'img', url: 'https://i.imgtg.com/2023/01/16/QRBHS.jpg' }])
 const fileList1 = ref([])
@@ -87,6 +175,35 @@ const avatar2 = ref('')
 const avatar3 = ref('')
 const avatar4 = ref('')
 const avatar5 = ref('https://i.imgtg.com/2023/01/16/QRqMK.jpg')
+
+const rules = reactive({
+	avatar: [{ required: true, message: '请上传用户头像' }],
+	photo: [{ required: true, message: '请上传用户照片' }],
+	username: [{ required: true, message: '请填写用户姓名' }],
+	idCard: [{ required: true, message: '请填写身份证号' }],
+	email: [{ required: true, message: '请填写邮箱' }]
+})
+
+const fromModel = ref({
+	avatar: '',
+	photo: [{ name: 'img', url: 'https://i.imgtg.com/2023/01/16/QR57a.jpg' }],
+	username: '',
+	idCard: '',
+	email: ''
+})
+const fromModel1 = ref({
+	avatar: '',
+	photo: [{ name: 'img', url: 'https://i.imgtg.com/2023/01/16/QR57a.jpg' }],
+	username: '',
+	idCard: '',
+	email: ''
+})
+const ruleFormRef = ref<FormInstance>()
+const submit = () => {
+	ruleFormRef.value!.validate(valid => {
+		console.log(valid)
+	})
+}
 </script>
 
 <style scoped lang="scss">
