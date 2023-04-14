@@ -35,5 +35,4 @@ app.use(icons)
 app.use(I18n)
 app.use(router)
 app.use(pinia)
-
 app.mount('#app')
