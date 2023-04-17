@@ -1,10 +1,12 @@
 import type { App } from 'vue'
 import auth from './auth'
 import copy from './copy'
+import waterMarker from './waterMarker'
 
 const directiveList: Record<string, any> = {
 	auth,
-	copy
+	copy,
+	waterMarker
 }
 
 const directives = {
