@@ -26,6 +26,8 @@ import I18n from '@/languages/index'
 import errorHandler from '@/utils/errorHandler'
 // svg icons
 import 'virtual:svg-icons-register'
+// custom directives
+import directives from '@/directives/index'
 
 const app = createApp(App)
 // 全局代码错误捕捉
@@ -35,4 +37,5 @@ app.use(icons)
 app.use(I18n)
 app.use(router)
 app.use(pinia)
+app.use(directives)
 app.mount('#app')
