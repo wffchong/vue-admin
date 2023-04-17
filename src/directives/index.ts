@@ -1,8 +1,10 @@
 import type { App } from 'vue'
 import auth from './auth'
+import copy from './copy'
 
 const directiveList: Record<string, any> = {
-	auth
+	auth,
+	copy
 }
 
 const directives = {
