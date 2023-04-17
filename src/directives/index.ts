@@ -3,12 +3,14 @@ import auth from './auth'
 import copy from './copy'
 import waterMarker from './waterMarker'
 import draggable from './draggable'
+import debounce from './debounce'
 
 const directiveList: Record<string, any> = {
 	auth,
 	copy,
 	waterMarker,
-	draggable
+	draggable,
+	debounce
 }
 
 const directives = {
