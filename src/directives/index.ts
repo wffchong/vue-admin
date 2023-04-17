@@ -1,10 +1,10 @@
 import type { App } from 'vue'
-import auth from './auth'
-import copy from './copy'
-import waterMarker from './waterMarker'
-import draggable from './draggable'
-import debounce from './debounce'
-import longpress from './longpress'
+import auth from './modules/auth'
+import copy from './modules/copy'
+import waterMarker from './modules/waterMarker'
+import draggable from './modules/draggable'
+import debounce from './modules/debounce'
+import longpress from './modules/longpress'
 
 const directiveList: Record<string, any> = {
 	auth,
