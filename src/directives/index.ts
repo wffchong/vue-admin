@@ -4,13 +4,15 @@ import copy from './copy'
 import waterMarker from './waterMarker'
 import draggable from './draggable'
 import debounce from './debounce'
+import longpress from './longpress'
 
 const directiveList: Record<string, any> = {
 	auth,
 	copy,
 	waterMarker,
 	draggable,
-	debounce
+	debounce,
+	longpress
 }
 
 const directives = {
