@@ -4,7 +4,7 @@
 		<div class="box-content">
 			<el-input placeholder="请输入内容" v-model="data" style="width: 500px">
 				<template #append>
-					<el-button v-copy="data">复制</el-button>
+					<el-button id="test" v-copy="data">复制</el-button>
 				</template>
 			</el-input>
 		</div>

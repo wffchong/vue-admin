@@ -7,7 +7,6 @@ import type { Directive, DirectiveBinding } from 'vue'
 
 interface ElType extends HTMLElement {
 	copyData: string | number
-	__handleClick__: any
 }
 
 const copy: Directive = {
@@ -21,7 +20,7 @@ const copy: Directive = {
 		el.copyData = value
 	},
 	beforeUnmount(el: ElType) {
-		el.removeEventListener('click', el.__handleClick__)
+		el.removeEventListener('click', handleClick)
 	}
 }
 
