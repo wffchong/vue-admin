@@ -31,7 +31,6 @@ export const useAuthStore = defineStore({
 		// getAuthButtonList
 		async getAuthButtonList() {
 			const { data } = await getAuthButtonListApi()
-			console.log('data', data)
 			this.authButtonList = data
 		},
 		// getAuthMenuList
