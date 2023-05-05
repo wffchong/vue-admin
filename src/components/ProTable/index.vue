@@ -47,6 +47,15 @@
 					</template>
 				</TableColumn>
 			</template>
+			<!-- 表格无数据情况 -->
+			<template #empty>
+				<div class="table-empty">
+					<slot name="empty">
+						<img src="@/assets/images/notData.png" alt="notData" />
+						<div>暂无数据</div>
+					</slot>
+				</div>
+			</template>
 		</el-table>
 	</div>
 </template>
