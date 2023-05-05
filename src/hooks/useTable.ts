@@ -78,8 +78,31 @@ export const useTable = (
 		Object.assign(state.pageable, resPageable)
 	}
 
+	/**
+	 * @description 每页条数改变
+	 * @param {Number} val 当前条数
+	 * @return void
+	 * */
+	const handleSizeChange = (val: number) => {
+		state.pageable.pageNum = 1
+		state.pageable.pageSize = val
+		getTableList()
+	}
+
+	/**
+	 * @description 当前页改变
+	 * @param {Number} val 当前页
+	 * @return void
+	 * */
+	const handleCurrentChange = (val: number) => {
+		state.pageable.pageNum = val
+		getTableList()
+	}
+
 	return {
 		...toRefs(state),
-		getTableList
+		getTableList,
+		handleSizeChange,
+		handleCurrentChange
 	}
 }

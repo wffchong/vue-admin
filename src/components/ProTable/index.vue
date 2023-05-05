@@ -56,6 +56,15 @@
 					</slot>
 				</div>
 			</template>
+			<!-- 分页组件 -->
+			<slot name="pagination">
+				<Pagination
+					v-if="pagination"
+					:pageable="pageable"
+					:handleSizeChange="handleSizeChange"
+					:handleCurrentChange="handleCurrentChange"
+				/>
+			</slot>
 		</el-table>
 	</div>
 </template>
@@ -66,6 +75,7 @@ import { useTable } from '@/hooks/useTable'
 import type { ElTable, TableProps } from 'element-plus'
 import { ColumnProps } from './interface'
 import { useSelection } from '@/hooks/useSelection'
+import Pagination from './components/Pagination.vue'
 
 interface ProTableProps extends Omit<TableProps<any>, 'data'> {
 	columns: ColumnProps[] // 列配置项
@@ -95,7 +105,12 @@ const tableRef = ref<InstanceType<typeof ElTable>>()
 // 表格多选 Hooks
 const { selectionChange, selectedList, selectedListIds, isSelected } = useSelection(props.rowKey)
 
-const { tableData, getTableList } = useTable(props.requestApi, props.initParam, props.pagination, props.dataCallback)
+const { tableData, getTableList, pageable, handleSizeChange, handleCurrentChange } = useTable(
+	props.requestApi,
+	props.initParam,
+	props.pagination,
+	props.dataCallback
+)
 
 // 清空选中数据列表
 const clearSelection = () => tableRef.value!.clearSelection()
