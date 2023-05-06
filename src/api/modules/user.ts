@@ -58,3 +58,8 @@ export const resetUserPassWord = (params: { id: string }) => {
 export const exportUserInfo = (params: User.ReqUserParams) => {
 	return http.download(`/user/export`, params)
 }
+
+// * 获取用户角色字典
+export const getUserRole = () => {
+	return http.get<User.ResRole>(`/user/role`)
+}
