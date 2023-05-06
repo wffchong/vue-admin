@@ -10,8 +10,6 @@ defineProps<{ column: ColumnProps }>()
 
 const slots = useSlots()
 
-console.log('slots', slots)
-
 const enumMap = inject('enumMap', ref(new Map()))
 
 // 渲染表格数据

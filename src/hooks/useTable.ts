@@ -99,10 +99,56 @@ export const useTable = (
 		getTableList()
 	}
 
+	/**
+	 * @description 更新查询参数
+	 * @return void
+	 * */
+	const updatedTotalParam = () => {
+		state.totalParam = {}
+		// 处理查询参数，可以给查询参数加自定义前缀操作
+		let nowSearchParam: { [key: string]: any } = {}
+		// 防止手动清空输入框携带参数（这里可以自定义查询参数前缀）
+		for (let key in state.searchParam) {
+			// * 某些情况下参数为 false/0 也应该携带参数
+			if (state.searchParam[key] || state.searchParam[key] === false || state.searchParam[key] === 0) {
+				nowSearchParam[key] = state.searchParam[key]
+			}
+		}
+		Object.assign(state.totalParam, nowSearchParam, isPageable ? pageParam.value : {})
+	}
+
+	/**
+	 * @description 表格数据查询
+	 * @return void
+	 * */
+	const search = () => {
+		state.pageable.pageNum = 1
+		updatedTotalParam()
+		getTableList()
+	}
+
+	/**
+	 * @description 表格数据重置
+	 * @return void
+	 * */
+	const reset = () => {
+		state.pageable.pageNum = 1
+		state.searchParam = {}
+		// 重置搜索表单的时，如果有默认搜索参数，则重置默认的搜索参数
+		Object.keys(state.searchInitParam).forEach(key => {
+			state.searchParam[key] = state.searchInitParam[key]
+		})
+		updatedTotalParam()
+		getTableList()
+	}
+
 	return {
 		...toRefs(state),
 		getTableList,
 		handleSizeChange,
-		handleCurrentChange
+		handleCurrentChange,
+		search,
+		reset,
+		updatedTotalParam
 	}
 }

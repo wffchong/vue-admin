@@ -122,6 +122,7 @@ const columns: ColumnProps<User.ResUserList>[] = [
 	{
 		prop: 'username',
 		label: '用户姓名',
+		search: { el: 'input' },
 		render: scope => {
 			return (
 				<el-button type='primary' link onClick={() => ElMessage.success('我是通过 tsx 语法渲染的内容')}>
@@ -139,17 +140,19 @@ const columns: ColumnProps<User.ResUserList>[] = [
 		enum: getUserGender,
 		// 字典请求携带参数
 		// enum: () => getUserGender({ id: 1 }),
+		search: { el: 'select', props: { filterable: true } },
 		fieldNames: { label: 'genderLabel', value: 'genderValue' }
 	},
 	// 多级 prop
-	{ prop: 'user.detail.age', label: '年龄' },
-	{ prop: 'idCard', label: '身份证号' },
+	{ prop: 'user.detail.age', label: '年龄', search: { el: 'input' } },
+	{ prop: 'idCard', label: '身份证号', search: { el: 'input' } },
 	{ prop: 'email', label: '邮箱' },
 	{ prop: 'address', label: '居住地址' },
 	{
 		prop: 'status',
 		label: '用户状态',
 		enum: getUserStatus,
+		search: { el: 'tree-select', props: { filterable: true } },
 		fieldNames: { label: 'userLabel', value: 'userStatus' },
 		render: scope => {
 			return (
@@ -173,7 +176,13 @@ const columns: ColumnProps<User.ResUserList>[] = [
 		prop: 'createTime',
 		label: '创建时间',
 		headerRender,
-		width: 180
+		width: 180,
+		search: {
+			el: 'date-picker',
+			span: 2,
+			props: { type: 'datetimerange', valueFormat: 'YYYY-MM-DD HH:mm:ss' },
+			defaultValue: ['2022-11-12 11:35:00', '2022-12-12 11:35:00']
+		}
 	},
 	// 固定在右边
 	{ prop: 'operation', label: '操作', fixed: 'right', width: 330 }
@@ -187,8 +196,8 @@ const openDrawer = (title: string, rowData: Partial<User.ResUserList> = {}) => {
 		title,
 		isView: title === '查看',
 		rowData: { ...rowData },
-		api: title === '新增' ? addUser : title === '编辑' ? editUser : undefined
-		// getTableList: proTable.value!.getTableList()
+		api: title === '新增' ? addUser : title === '编辑' ? editUser : undefined,
+		getTableList: proTable.value?.getTableList
 	}
 	drawerRef.value?.acceptParams(params)
 }
