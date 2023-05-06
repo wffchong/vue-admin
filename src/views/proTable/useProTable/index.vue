@@ -1,6 +1,13 @@
 <template>
 	<div class="table-box">
-		<ProTable title="用户列表" :columns="columns" :requestApi="getTableList" :initParam="initParam" :dataCallback="dataCallback">
+		<ProTable
+			ref="proTable"
+			title="用户列表"
+			:columns="columns"
+			:requestApi="getTableList"
+			:initParam="initParam"
+			:dataCallback="dataCallback"
+		>
 			<!-- 表格 header 按钮 -->
 			<template #tableHeader="scope">
 				<el-button type="primary" :icon="CirclePlus" @click="openDrawer('新增')" v-auth="'add'">新增用户</el-button>
@@ -228,6 +235,7 @@ const deleteAccount = async (params: User.ResUserList) => {
 // 批量删除用户信息
 const batchDelete = async (id: string[]) => {
 	await useHandleData(deleteUser, { id }, '删除所选用户信息')
+	console.log('proTable', proTable.value)
 	proTable.value?.clearSelection()
 	proTable.value?.getTableList()
 }

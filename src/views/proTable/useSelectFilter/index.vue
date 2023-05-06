@@ -13,6 +13,7 @@
 				<SelectFilter :data="selectFilterData" :defaultValues="selectFilterValues" @change="changeSelectFilter" />
 			</div>
 			<ProTable
+				ref="proTable"
 				title="用户列表"
 				:columns="columns"
 				:requestApi="getUserList"

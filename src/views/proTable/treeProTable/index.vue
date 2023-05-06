@@ -9,6 +9,7 @@
 		/>
 		<div class="table-box">
 			<ProTable
+				ref="proTable"
 				title="用户列表"
 				rowKey="id"
 				:indent="30"
