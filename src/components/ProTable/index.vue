@@ -245,6 +245,8 @@ defineExpose({
 	getTableList,
 	clearSelection,
 	searchParam,
-	pageable
+	pageable,
+	element: tableRef,
+	tableData
 })
 </script>
