@@ -240,6 +240,8 @@ const handlePrint = () => {
 // 暴露给父组件使用
 defineExpose({
 	getTableList,
-	clearSelection
+	clearSelection,
+	searchParam,
+	pageable
 })
 </script>
