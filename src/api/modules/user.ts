@@ -14,6 +14,11 @@ export const getUserList = (params: User.ReqUserParams) => {
 	return http.post<ResPage<User.ResUserList>>(`/user/list`, params)
 }
 
+// * 获取树形用户列表
+export const getUserTreeList = (params: User.ReqUserParams) => {
+	return http.post<ResPage<User.ResUserList>>(`/user/tree/list`, params)
+}
+
 // * 获取用户状态
 export const getUserStatus = () => {
 	return http.get<User.ResStatus>(`/user/status`)

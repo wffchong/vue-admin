@@ -142,6 +142,9 @@ const clearSelection = () => tableRef.value!.clearSelection()
 // 初始化请求
 onMounted(() => props.requestAuto && getTableList())
 
+// 监听页面 initParam 改化，重新获取表格数据
+watch(() => props.initParam, getTableList, { deep: true })
+
 // 接收 columns 并设置为响应式
 const tableColumns = ref<ColumnProps[]>(props.columns)
 
